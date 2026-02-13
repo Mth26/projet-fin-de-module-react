@@ -1,15 +1,24 @@
-import { Box, Button, ChakraProvider } from '@chakra-ui/react'
-import { system } from './theme'
+// App.tsx - Composant principal de l'application
+import React from "react"
+import { ChakraProvider, Box, Text, Button } from "@chakra-ui/react"
+import { system } from "./theme/index"
 
 function App() {
-  // const [count, setCount] = React.useState(0)
-
   return (
     <ChakraProvider value={system}>
-      <Box bg="brand.500">Welcome</Box>
-      <Button colorScheme='brand'>Click me</Button>
+      {/* Test simple pour voir si le thème fonctionne */}
+      <Box bg="brand.black" color="brand.white" p={8} textAlign="center">
+        <Text fontSize="2xl" fontFamily="heading">
+          TEST DU THÈME - TITRE EN BEBAS NEUE
+        </Text>
+        <Text fontFamily="body" mt={2}>
+          Ceci est du texte en Inter
+        </Text>
+        <Button mt={4} bg="brand.white" color="brand.black">
+          Bouton test
+        </Button>
+      </Box>
     </ChakraProvider>
-
   )
 }
 
