@@ -8,7 +8,7 @@ export const authService = {
     },
 
     async register(credentials: RegisterCredentials): Promise<AuthResponse> {
-        await api.post("/users", credentials)
+        await api.post("/users/signup", credentials) //erreur sur la roote, rendu compte trop tard, mais normalement c'est /users/signup
         // auto login apres inscription
         const loginResponse = await api.post("/users/signin", {
             emailAddress: credentials.emailAddress,
